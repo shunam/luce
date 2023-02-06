@@ -39,6 +39,7 @@ class InvoicesController < ApplicationController
 
   # POST /invoices or /invoices.json
   def create
+    @form_path = client_invoices_path(@client)
     @invoice = Invoice.new(invoice_params)
 
     respond_to do |format|
